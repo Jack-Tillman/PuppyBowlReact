@@ -8,7 +8,6 @@ export const Navbar = () => {
         <nav>
             <Link to="/">Home</Link>
             <Link to="/newplayerform">Add New Player</Link>
-            <Link to="/singleplayerview/:id">Single player view</Link>
         </nav>
     )
 }
