@@ -12,7 +12,6 @@ export const AllPlayers = () => {
   useEffect(() => {
     async function getAllPlayers() {
       const APIReesponse = await fetchAllPlayers();
-      console.log(APIReesponse);
       if (APIReesponse.success) {
         setPlayers(APIReesponse.data.players);
       } else {
@@ -34,7 +33,7 @@ export const AllPlayers = () => {
         <div id="playerlist-container">
           <div id="search-bar">
             <label>
-              Search{" "}
+              Search for a dog by name{" "}
               <input
                 type="text"
                 placeholder="search"
@@ -42,6 +41,7 @@ export const AllPlayers = () => {
               />
             </label>
           </div>
+
           {playersToDisplay.map((player) => {
             return (
               <div id="player-card" key={player.id}>
@@ -52,7 +52,6 @@ export const AllPlayers = () => {
                   <button
                     className="details-button"
                     onClick={() => {
-                      console.log(player.id);
                       navigate(`/singleplayer/${player.id}`);
                     }}
                   >

@@ -4,7 +4,6 @@ export const fetchAllPlayers = async () => {
   try {
     const response = await fetch(`${API_URL}players`);
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error) {
     console.error(error, error.message);
@@ -13,10 +12,8 @@ export const fetchAllPlayers = async () => {
 
 export const fetchSinglePlayer = async (playerId) => {
   try {
-    console.log(playerId.id);
     const response = await fetch(`${API_URL}players/${playerId.id}`);
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error) {
     console.error(error, error.message);
@@ -25,7 +22,6 @@ export const fetchSinglePlayer = async (playerId) => {
 
 export const addNewPlayer = async (playerObject) => {
   try {
-    console.log(playerObject);
     const response = await fetch(`${API_URL}players`, {
       method: "POST",
       headers: {
@@ -36,9 +32,7 @@ export const addNewPlayer = async (playerObject) => {
         breed: playerObject.breed,
       }),
     });
-    console.log(response);
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error) {
     console.error(error, error.message);

@@ -1,3 +1,18 @@
+/*
+APOLOGIES for the awful CSS - I overused containers wayyyy too much and after 
+the hours it took to get all this set up, I was too tired to refactor redundant 
+classes and divs and make everything look nice <_<
+*/
+
+
+body {
+  margin: 0 auto;
+  background-color: #2b2d42;
+  color: rgba(255, 255, 255, 0.87);
+  text-align: center;
+}
+
+/* 
 #root {
   display: flex;
   flex-direction: column;
@@ -5,7 +20,12 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #3f4561; */
+  /* border: 2px solid transparent;
+  border-radius: 5%; 
 }
+*/
 
 * {
   box-sizing: border-box;
@@ -13,13 +33,6 @@
   margin: 0;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
 
 h1 {
   font-size: 3.2em;
@@ -35,16 +48,24 @@ nav {
   justify-content: space-evenly;
   font-size: 1.25rem;
   min-width: 85vw;
+  color: white;
+  padding:1rem;
+  margin:1rem auto;
 }
 
 a {
   text-decoration: none;
+  color: white;
 }
 
-/* AllPlayers */
+/* AllPlayers page */
 
 #search-bar {
   min-width: 75vw;
+  box-shadow: 2px 2px 4px rgb(163, 160, 202);
+  margin: 1rem 0;
+  color:white;
+  font-size:1.5rem;
 }
 
 input {
@@ -68,7 +89,7 @@ img {
   align-items: center;
   margin: 1rem auto;
   gap: 2.5rem;
-  background-color: azure;
+  background-color: #2b2d42;
 }
 
 /* container for each individual puppy, including image */
@@ -82,12 +103,11 @@ img {
   height: 20rem;
   padding: 1.5rem;
   margin: 0.5rem 0;
-  border: 1px double #73BFB8;
+  border: 1px double #b6cfa2;
   border-radius: 10%;
   border-width: 5px;
-  background-color: #3DA5D9;
+  background-color: #6765bd;
   font-size: 1rem;
-  text-shadow: 1px 1px 2px rgb(0, 0, 0), 1px 1px 7px rgb(255, 255, 255);
 }
 
 /* Container for individual puppy, excluding image */
@@ -100,6 +120,36 @@ img {
   max-height: 5rem;
 }
 
+#singleplayer-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  width: 35rem;
+  height: 40rem;
+  padding: 1.5rem;
+  margin: 0.5rem auto;
+  border: 1px double #b6cfa2;
+  border-radius: 10%;
+  border-width: 5px;
+  background-color: #6765bd;
+  font-size: 1rem;
+}
+
+#singleplayer-view>img {
+  margin: 5rem auto;
+  max-height: 25rem;
+  border-radius: 10%;
+}
+
+#singleplayer-details>* {
+  margin: 0.5rem 1rem;
+  padding: 0.5rem;
+  min-width: 10rem;
+  max-width: 20rem;
+  min-height: 3.5rem;
+  max-height: 5rem;
+}
 
 #submit,
 .details-button,
@@ -164,7 +214,7 @@ main.form-main {
 
 .new-player-form {
   margin: 0em auto 3em auto;
-  padding:2rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   font-size: 1.5em;
@@ -194,8 +244,6 @@ main.form-main {
   color: red;
 }
 
-
-
 label.all-labels {
   display: flex;
   flex-direction: column;
@@ -203,68 +251,64 @@ label.all-labels {
   margin: 0 auto;
 }
 
-.welcome-notification {
+.success-notification {
   display: flex;
-  flex: 1;
   justify-content: center;
   align-items: center;
-  width: 75%;
-  display: inline;
+  width: 10rem;
+  height: 10rem;
   background-color: #ffffff;
-  border: 10px solid #33c63a;
+  border: 4px solid #33c63a;
+  border-radius: 100%;
   text-align: center;
   padding: 0.5rem 0.75rem;
   color: #33c63a;
   font-weight: 900;
-  font-size: 5rem;
-  margin: 1rem auto 0rem auto;
+  font-size: 2rem;
+  margin: 2rem auto;
 }
-
 
 /* very scuffed media queries */
 @media screen and (max-width:1600px) {
   main.form-main {
-      display: flex;
-      flex-direction: column;
-      flex: 1 1 1;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 1;
   }
 
   h3.h3-form {
-      font-size: 3rem;
-      margin: 1em auto;
+    font-size: 3rem;
+    margin: 1em auto;
   }
 
   .form-container {
-      display: flex;
-      flex-direction: column;
-      width: 75%;
-      margin: 4em auto;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: 4em auto;
   }
 
   .new-player-form {
-      margin: 0em auto 3em auto;
-      display: flex;
-      flex-direction: column;
-      font-size: 1.5em;
-      width: auto;
+    margin: 0em auto 3em auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+    width: auto;
   }
 
   .form-input {
-      margin: 0 auto;
-      width: 100%;
+    margin: 0 auto;
+    width: 100%;
   }
 
   button#submit {
-      width: 75%;
-      margin: 0.75rem auto 0 auto;
+    width: 75%;
+    margin: 0.75rem auto 0 auto;
   }
 
   .form-setup {
-      text-align: left;
-      display: flex;
-      justify-content: flex-start;
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
   }
-
-
-
 }
